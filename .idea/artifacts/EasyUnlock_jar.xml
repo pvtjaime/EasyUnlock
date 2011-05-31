@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="EasyUnlock.jar">
+    <output-path>$PROJECT_DIR$/bin/artifacts</output-path>
+    <root id="archive" name="EasyUnlock.jar">
+      <element id="module-output" name="EasyUnlock" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Permissions/out/artifacts/Permissions.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/res/plugin.yml" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="Copy to Localhost">
+    <output-path>$PROJECT_DIR$/../Bukkit/plugins</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="EasyUnlock.jar" />
+      <element id="directory" name="EasyUnlock">
+        <element id="file-copy" path="$PROJECT_DIR$/res/config.yml" />
+      </element>
+    </root>
+  </artifact>
+</component>
