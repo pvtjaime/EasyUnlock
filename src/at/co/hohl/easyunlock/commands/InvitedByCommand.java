@@ -107,14 +107,16 @@ public class InvitedByCommand implements CommandExecutor {
 
         data.setAdvertised(data.getAdvertised() + 1);
 
+        int amountToGet = Math.min(data.getAdvertised(), plugin.getConfiguration().getInt("max_grant_adviser", 7));
+
         Player onlinePlayer = server.getPlayer(player);
 
         if (onlinePlayer != null && onlinePlayer.isOnline()) {
-            onlinePlayer.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, data.getAdvertised()));
+            onlinePlayer.getInventory().addItem(new ItemStack(Material.GOLD_INGOT, amountToGet));
             onlinePlayer.sendMessage(ChatColor.LIGHT_PURPLE + String.format(
-                    plugin.getConfiguration().getString("messages.thanks_to_advice"), data.getAdvertised()));
+                    plugin.getConfiguration().getString("messages.thanks_to_advice"), amountToGet));
         } else {
-            data.setGoldCredit(data.getGoldCredit() + data.getAdvertised());
+            data.setGoldCredit(data.getGoldCredit() + amountToGet);
         }
 
         plugin.getDatabase().save(data);

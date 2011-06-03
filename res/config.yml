@@ -1,3 +1,7 @@
+# Max. amount of gold to own for inviting a player.
+max_grant_adviser: 7
+
+# Translations used by this plugin.
 messages:
     wait_for_mod: 'Bitte etwas Geduld. Ein Moderator wird sich um deine Freischaltung kuemmern.'
     no_mod_online: 'Derzeit ist kein Moderator online. Du wurdest auf die Warteliste gesetzt. Bitte etwas Geduld...'
