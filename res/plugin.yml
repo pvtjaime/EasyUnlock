@@ -1,18 +1,22 @@
 name: EasyUnlock
 main: at.co.hohl.easyunlock.EasyUnlock
-version: 1.0
+version: 1.1
 author: 'Michael Hohl (miho)'
 database: true
 commands:
   accept:
     description: Accepts the rules.
     usage: /<command> <player> - Accepts the rules.
-    permission: easyunlock.accept
+    permission: easyunlock.command.accept
   unlock:
     description: Unlocks the passed player.
     usage: /<command> [<player>] - Unlocks the passed player, or displays all player available to unlock.
-    permission: easyunlock.unlock
+    permission: easyunlock.command.unlock
   invitedby:
     description: Sets the player who invited you.
     usage: /<command> <player> - Sets the player who invited you.
-    permission: easyunlock.invitedby
+    permission: easyunlock.command.invitedby
+  aboutplayer:
+    description: Returns information about the player.
+    usage: /<command> <player> - Returns information about the player.
+    permission: easyunlock.command.aboutplayer

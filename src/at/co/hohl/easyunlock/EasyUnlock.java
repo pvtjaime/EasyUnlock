@@ -30,6 +30,9 @@ public class EasyUnlock extends JavaPlugin {
     /** Needed to accept the rules. */
     public static final Permission INVITED_BY_PERMISSION = new Permission("easyunlock.command.invitedby", false);
 
+    /** Needed to get information about players. */
+    public static final Permission ABOUT_PLAYER_PERMISSION = new Permission("easyunlock.command.aboutplayer", false);
+
     /** Handler for the permissions. */
     private PermissionHandler permissionHandler;
 

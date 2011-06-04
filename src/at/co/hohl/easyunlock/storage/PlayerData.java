@@ -20,11 +20,14 @@ public class PlayerData {
     private int id;
 
     @NotEmpty
-    @Length(max = 42)
+    @Length(max = 32)
     private String name;
 
-    @Length(max = 42)
+    @Length(max = 32)
     private String invitedBy;
+
+    @Length(max = 32)
+    private String unlockedBy;
 
     private boolean unlocked = false;
 
@@ -102,5 +105,13 @@ public class PlayerData {
 
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
+    }
+
+    public String getUnlockedBy() {
+        return unlockedBy;
+    }
+
+    public void setUnlockedBy(String unlockedBy) {
+        this.unlockedBy = unlockedBy;
     }
 }

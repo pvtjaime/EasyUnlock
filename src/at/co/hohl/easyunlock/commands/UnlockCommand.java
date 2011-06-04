@@ -50,9 +50,14 @@ public class UnlockCommand implements CommandExecutor {
                         .allEq(argumentsToCheck)
                         .findList();
 
-                sender.sendMessage(ChatColor.LIGHT_PURPLE + "= = = Player Accepted Rules & Need To Unlock = = =");
-                for (PlayerData data : usersToUnlock) {
-                    sender.sendMessage(String.format("%s (%s)", data.getName(), data.getAcceptedDated()));
+
+                if (usersToUnlock.size() > 0) {
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "= = = Player Accepted Rules & Need To Unlock = = =");
+                    for (PlayerData data : usersToUnlock) {
+                        sender.sendMessage(String.format("%s (%s)", data.getName(), data.getAcceptedDated()));
+                    }
+                } else {
+                    sender.sendMessage(ChatColor.LIGHT_PURPLE + "There aren't any players to unlock!");
                 }
 
                 return true;
@@ -66,6 +71,10 @@ public class UnlockCommand implements CommandExecutor {
 
                 if (data.isRulesAccepted()) {
                     data.setUnlocked(true);
+                    if (sender instanceof Player) {
+                        data.setUnlockedBy(((Player) sender).getName());
+                    }
+
                     sender.sendMessage(
                             ChatColor.GREEN + plugin.getConfiguration().getString("messages.player_unlocked"));
 

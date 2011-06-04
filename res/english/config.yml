@@ -1,0 +1,20 @@
+# Max. amount of gold to own for inviting a player.
+max_grant_adviser: 7
+
+# Translations used by this plugin.
+messages:
+    wait_for_mod: 'Please wait. A moderator will take care of your activation.'
+    no_mod_online: 'Currently, no moderator is online. You became law on the waiting list. Please be patient.'
+    rules_already_accepted: 'You have accepted the rules already.'
+    only_one_adviser: 'You can specify only one person from whom you have been invited.'
+    invalid_usage_invited_by_command: 'You must enter a valid players name!'
+    too_late_to_set_adviser: 'You already activiated! It's too late to set an adviser.'
+    thanks_to_advice1: 'Thank you recruiting a new player.'
+    thanks_to_advice2: 'You got %d gold ingots!'
+    adviser_do_not_exist: 'Thank you recruiting a new player.'
+    not_accepted_rules: 'Player has not yet accepted the rules.'
+    player_unlocked: 'Player was unlocked. Don't forget to set the correct group manually.'
+    unlocked: 'You have been unlocked! Have fun on the server.'
+    players_to_unlock: 'There are new players to unlock is available.'
+    can_not_invited_by_yourself: 'You will be invited not by yourself!'
+    adviser_recognized: 'The player is notified.'

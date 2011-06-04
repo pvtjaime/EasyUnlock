@@ -4,7 +4,7 @@
     <root id="root">
       <element id="artifact" artifact-name="EasyUnlock.jar" />
       <element id="directory" name="EasyUnlock">
-        <element id="file-copy" path="$PROJECT_DIR$/res/config.yml" />
+        <element id="file-copy" path="$PROJECT_DIR$/res/german/config.yml" />
       </element>
     </root>
   </artifact>
