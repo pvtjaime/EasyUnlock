@@ -1,5 +1,6 @@
 package at.co.hohl.easyunlock;
 
+import at.co.hohl.easyunlock.commands.AboutPlayerCommand;
 import at.co.hohl.easyunlock.commands.AcceptCommand;
 import at.co.hohl.easyunlock.commands.InvitedByCommand;
 import at.co.hohl.easyunlock.commands.UnlockCommand;
@@ -57,6 +58,7 @@ public class EasyUnlock extends JavaPlugin {
         getCommand("unlock").setExecutor(new UnlockCommand(this));
         getCommand("accept").setExecutor(new AcceptCommand(this));
         getCommand("invitedby").setExecutor(new InvitedByCommand(this));
+        getCommand("aboutplayer").setExecutor(new AboutPlayerCommand(this));
 
         logger.info(String.format("[%s] version %s enabled!",
                 getDescription().getName(), getDescription().getVersion()));

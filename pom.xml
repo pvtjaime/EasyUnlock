@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>at.co.hohl</groupId>
+    <artifactId>EasyUnlock</artifactId>
+    <version>1.0</version>
+
+    <scm>
+        <connection>scm:git:git://github.com/hohl/EasyUnlock.git</connection>
+        <url>https://github.com/hohl/EasyUnlock</url>
+        <developerConnection>scm:git:git@github.com:hohl/EasyUnlock.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>ftp-repository</id>
+            <url>ftp://hohl.bplaced.net/mvn2</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- Repository for dependencies of MIHO's -->
+        <repository>
+            <id>miho-mvn2</id>
+            <url>http://hohl.bplaced.net/mvn2</url>
+        </repository>
+
+        <!-- Repository for Bukkit -->
+        <repository>
+            <id>bukkit-repo</id>
+            <url>http://repo.bukkit.org/artifactory/repo</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- PermissionHandler -->
+        <dependency>
+            <groupId>at.co.hohl</groupId>
+            <artifactId>permissions</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- Register -->
+        <dependency>
+            <groupId>com.nijikokun</groupId>
+            <artifactId>register</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!-- Bukkit -->
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
+
+        <!-- Resources -->
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <!-- Plugins -->
+        <plugins>
+            <!-- Compile plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
+
+            <!-- Assembly -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+        <extensions>
+            <!-- Enabling the use of FTP -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>1.0-beta-6</version>
+            </extension>
+        </extensions>
+    </build>
+</project>

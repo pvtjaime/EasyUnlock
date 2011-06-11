@@ -1,6 +1,5 @@
 *.ipr
 *.iml
 *.iws
-misc.xml
-workspace.xml
-qaplug_profiles.xml
+.idea/
+true
