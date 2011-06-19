@@ -16,7 +16,7 @@ messages:
     thanks_to_advice2: 'Du bekommst %d Goldbarren!'
     adviser_do_not_exist: 'Der Spieler exestiert nicht! Bitte den exakten Spielernamen eingeben.'
     not_accepted_rules: 'Spieler hat die Regeln noch nicht akzeptiert!'
-    player_unlocked: 'Spieler wurde freigeschalten. Achtung: Der /promote Befehl ist nicht mehr noetig!'
+    player_unlocked: 'Spieler wurde freigeschalten.!'
     unlocked: 'Du wurdest freigeschalten! Viel Spass auf unserem Server.'
     players_to_unlock: 'Es sind neue Spieler zum Freischalten verfuegbar.'
     can_not_invited_by_yourself: 'Du kannst nicht von dir selbst eingeladen worden sein!'

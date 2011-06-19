@@ -77,7 +77,7 @@ public class UnlockCommand implements CommandExecutor {
 
                         String promoteCommand = plugin.getConfiguration().getString("command_on_unlock", "/promote %s");
                         if (promoteCommand != null) {
-                            plugin.getServer().dispatchCommand(player, String.format(promoteCommand, player.getName()));
+                            plugin.getServer().dispatchCommand(player, String.format(promoteCommand.substring(1), player.getName()));
                         }
                     }
 
