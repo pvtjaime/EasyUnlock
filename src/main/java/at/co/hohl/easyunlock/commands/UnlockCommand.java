@@ -72,15 +72,25 @@ public class UnlockCommand implements CommandExecutor {
                 if (data.isRulesAccepted()) {
                     data.setUnlocked(true);
                     if (sender instanceof Player) {
-                        data.setUnlockedBy(((Player) sender).getName());
-                    }
+                        Player player = (Player) sender;
+                        data.setUnlockedBy(player.getName());
 
-                    sender.sendMessage(
-                            ChatColor.GREEN + plugin.getConfiguration().getString("messages.player_unlocked"));
+                        String promoteCommand = plugin.getConfiguration().getString("command_on_unlock", "/promote %s");
+                        if (promoteCommand != null) {
+                            plugin.getServer().dispatchCommand(player, String.format(promoteCommand, player.getName()));
+                        }
+                    }
 
                     Player player = sender.getServer().getPlayer(args[0]);
                     if (player != null) {
                         player.sendMessage(ChatColor.GREEN + plugin.getConfiguration().getString("messages.unlocked"));
+                    }
+
+                    for (Player playerToNotify : plugin.getServer().getOnlinePlayers()) {
+                        if (plugin.getPermissionHandler().hasPermission(playerToNotify, EasyUnlock.UNLOCK_PERMISSION)) {
+                            playerToNotify.sendMessage(
+                                    ChatColor.GREEN + plugin.getConfiguration().getString("messages.player_unlocked"));
+                        }
                     }
 
                     plugin.getLogger().info(String.format("Player %s unlocked.", args[0]));
