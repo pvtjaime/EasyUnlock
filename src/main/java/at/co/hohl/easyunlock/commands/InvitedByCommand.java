@@ -39,8 +39,7 @@ public class InvitedByCommand implements CommandExecutor {
      * @return true, if the command gets executed.
      */
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (plugin.getPermissionHandler().hasPermission(sender, EasyUnlock.INVITED_BY_PERMISSION)
-                && sender instanceof Player) {
+        if (sender.hasPermission("easyunlock.command.invitedby") && sender instanceof Player) {
             Player player = (Player) sender;
             String playerName = player.getName();
 

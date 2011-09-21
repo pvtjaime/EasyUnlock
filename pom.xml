@@ -24,8 +24,8 @@
     <repositories>
         <!-- Repository for dependencies of MIHO's -->
         <repository>
-            <id>miho-mvn2</id>
-            <url>http://hohl.bplaced.net/mvn2</url>
+            <id>hohl-official</id>
+            <url>http://repo.hohl.cc/artifactory/repo</url>
         </repository>
 
         <!-- Repository for Bukkit -->
@@ -36,13 +36,6 @@
     </repositories>
 
     <dependencies>
-        <!-- PermissionHandler -->
-        <dependency>
-            <groupId>at.co.hohl</groupId>
-            <artifactId>permissions</artifactId>
-            <version>1.0</version>
-        </dependency>
-
         <!-- Register -->
         <dependency>
             <groupId>com.nijikokun</groupId>

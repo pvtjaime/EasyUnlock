@@ -37,7 +37,7 @@ public class AboutPlayerCommand implements CommandExecutor {
      * @return true, if the command gets executed.
      */
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (plugin.getPermissionHandler().hasPermission(sender, EasyUnlock.ABOUT_PLAYER_PERMISSION)) {
+        if (sender.hasPermission("easyunlock.command.invitedby")) {
             if (args.length != 1) {
                 sender.sendMessage(ChatColor.RED + "You need to pass a player name!");
                 return true;

@@ -54,7 +54,7 @@ public class PlayerJoinsListener extends PlayerListener {
         }
 
         // Check if there are user to unlock, when moderator comes online.
-        if (plugin.getPermissionHandler().hasPermission(event.getPlayer(), EasyUnlock.UNLOCK_PERMISSION)) {
+        if (event.getPlayer().hasPermission("easyunlock.command.unlock")) {
             HashMap<String, Object> argumentsToCheck = new HashMap<String, Object>();
             argumentsToCheck.put("rulesAccepted", true);
             argumentsToCheck.put("unlocked", false);
