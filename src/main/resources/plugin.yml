@@ -7,16 +7,36 @@ commands:
   accept:
     description: Accepts the rules.
     usage: /<command> <player> - Accepts the rules.
-    permission: easyunlock.command.accept
   unlock:
     description: Unlocks the passed player.
     usage: /<command> [<player>] - Unlocks the passed player, or displays all player available to unlock.
-    permission: easyunlock.command.unlock
   invitedby:
     description: Sets the player who invited you.
     usage: /<command> <player> - Sets the player who invited you.
-    permission: easyunlock.command.invitedby
   aboutplayer:
     description: Returns information about the player.
     usage: /<command> <player> - Returns information about the player.
-    permission: easyunlock.command.aboutplayer
+permissions:
+  easyunlock.*:
+    description: Gives access to all EasyUnlock stuff
+    children:
+      easyunlock.command.*: true
+  easyunlock.command.*:
+    description: Gives access to all EasyUnlock commands
+    children:
+      easyunlock.command.accept: true
+      easyunlock.command.unlock: true
+      easyunlock.command.invitedby: true
+      easyunlock.command.aboutplayer: true
+  easyunlock.command.accept:
+    description: Allows to accept the rules
+    default: true
+  easyunlock.command.unlock:
+    description: Allows to unlock players
+    default: op
+  easyunlock.command.invitedby:
+    description: Allows to set an invitor
+    default: true
+  easyunlock.command.aboutplayer:
+    description: Allows to check information of an user
+    default: op

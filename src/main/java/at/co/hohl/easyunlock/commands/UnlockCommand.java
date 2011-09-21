@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -77,7 +78,8 @@ public class UnlockCommand implements CommandExecutor {
 
                         String promoteCommand = plugin.getConfiguration().getString("command_on_unlock", "/promote %s");
                         if (promoteCommand != null) {
-                            plugin.getServer().dispatchCommand(player, String.format(promoteCommand.substring(1), player.getName()));
+                            plugin.getServer().dispatchCommand(new ConsoleCommandSender(player.getServer()),
+                                    String.format(promoteCommand.substring(1), data.getName()));
                         }
                     }
 
